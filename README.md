@@ -11,3 +11,15 @@ passwrod visula show and hide button code
  <input type={showPassword ? 'text' : 'password'} value={password} onChange={(e) => setPassword(e.target.value)} placeholder="Enter your password" 
  className="input input-bordered"/>
  <button onClick={togglePasswordVisibility}>{showPassword ? 'Hide Password' : 'Show Password'}</button>
+ 
+ Navbar hide code to children page useLOcation Hokks
+ 
+     const location = useLocation();
+     const noHeaderfooter = location.pathname.includes('login');
+    return (
+         <div>
+           { noHeaderfooter || <Navbar></Navbar>}
+            <Outlet></Outlet>
+            {noHeaderfooter || <Footer></Footer>}
+         </div>
+    );
