@@ -22,3 +22,8 @@ const togglePasswordVisibility = () => { setShowPassword(!showPassword); };
             {noHeaderfooter || <Footer></Footer>}
          </div>
     );
+    
+    button disabled kivabe korbo tar shor tecknik 
+    const [disabled, setDisabled] = useState(true);
+    input disabled={disabled}
+    okk button is disaable
