@@ -27,3 +27,18 @@ const togglePasswordVisibility = () => { setShowPassword(!showPassword); };
     const [disabled, setDisabled] = useState(true);
     input disabled={disabled}
     okk button is disaable
+    ****How to use React Hook form ************
+    search react hook form and instal 
+    import useForm 
+       import { useForm } from 'react-hook-form'; component head;
+       const { register, handleSubmit, watch, resetField, formState: { errors } } = useForm(); componet on;
+       onSubmit={handleSubmit(onSubmit)} form cotation in and call();
+       <div className="form-control">
+       <label className="label"> <span className="label-text">Email</span></label>
+       <input type="email" name='email' {...register("email", { required: true })} placeholder="Type here" className='h-[50px] border-r-2 rounded-lg bg-white border          pl-5' />
+      {errors.email && <span className='text-red-600 animate-pulse'>Email is required</span>}
+      </div>
+     onclick handle reset button and field reset them
+        resetField, this props use UseForm
+       const handleClick = () => resetField("name","email", "password");
+      onClick={handleClick}
