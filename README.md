@@ -43,3 +43,38 @@ const togglePasswordVisibility = () => { setShowPassword(!showPassword); };
         resetField, this props use UseForm
        const handleClick = () => resetField("name","email", "password");
       onClick={handleClick}
+******************Private route*********************
+import { useContext } from "react";
+import { AuthContext } from "../providers/AuthProvider";
+import { Navigate, useLocation } from "react-router";
+
+
+const PrivateRoute = ({ children }) => {
+    const { user, loading } = useContext(AuthContext);
+    const location = useLocation();
+
+    if(loading){
+        return <progress className="progress w-56"></progress>
+    }
+
+    if (user) {
+        return children;
+    }
+    return <Navigate to="/login" state={{from: location}} replace></Navigate>
+};
+
+export default PrivateRoute;
+********************active LInk***********************
+import React from 'react';
+import { NavLink } from 'react-router-dom';
+const ActiveLink = ({to, children}) => {
+    return (
+    <NavLink
+    to={to}
+    className={({ isActive}) => isActive ? "text-white" : ''}>
+    {children}
+    </NavLink>
+    );
+};
+
+export default ActiveLink;
