@@ -78,3 +78,12 @@ const ActiveLink = ({to, children}) => {
 };
 
 export default ActiveLink;
+*************************************************************************
+*************************jsoon web token bar korar niyow JWT*************
+**************************************************************************
+node firset-command
+require('crypto').randomBytes(64) second-comand
+require('crypto').randomBytes(64).toString() third-command
+require('crypto').randomBytes(64).toString('hex') fourth-comand
+জেই ভেলু টা আসবে সেতা invironment env file save kore rekha diba ok;
+
